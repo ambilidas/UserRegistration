@@ -14,8 +14,9 @@ namespace UserRegistration
             Console.Write("Please Enter First Name:");
             var fname=Console.ReadLine();
             string firstname = "^[A-Z]{1}[a-z]{2,}$";
-            Regex regex = new Regex(firstname);
-            if (regex.IsMatch(fname))
+
+            Regex regex1 = new Regex(firstname);
+            if (regex1.IsMatch(fname))
             {
                 Console.WriteLine("Your name : " + fname);
                 Console.WriteLine("Valid name");
@@ -23,6 +24,21 @@ namespace UserRegistration
             else
             {
                 Console.WriteLine("Entered name is not valid!!");
+            }
+
+            Console.Write("Please Enter Last Name:");
+            var lname = Console.ReadLine();
+            string lastname = "^[A-Z]{1}[a-z]{2,}$";
+
+            Regex regex2 = new Regex(lastname);
+            if (regex2.IsMatch(lname))
+            {
+                Console.WriteLine("Your last name : " + lname);
+                Console.WriteLine("Last name is valid");
+            }
+            else
+            {
+                Console.WriteLine("Entered last name is not valid!!");
             }
         }
     }
