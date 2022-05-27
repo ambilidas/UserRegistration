@@ -12,7 +12,7 @@ namespace UserRegistration
         public void ValidationOfData()
         {
             Console.Write("Please Enter First Name:");
-            var fname=Console.ReadLine();
+            var fname = Console.ReadLine();
             string firstname = "^[A-Z]{1}[a-z]{2,}$";
 
             Regex regex1 = new Regex(firstname);
@@ -39,6 +39,23 @@ namespace UserRegistration
             else
             {
                 Console.WriteLine("Entered last name is not valid!!");
+            }
+
+            Console.Write("Please Enter a Valid Email Id: ");
+            var email = Console.ReadLine();
+            string mailid = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                             @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                                @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+
+            Regex regex3 = new Regex(mailid);
+            if (regex3.IsMatch(email))
+            {
+                Console.WriteLine("Your mail Id : " + email);
+                Console.WriteLine("Mail Id is valid");
+            }
+            else
+            {
+                Console.WriteLine("Entered Email Id is not valid!!");
             }
         }
     }
