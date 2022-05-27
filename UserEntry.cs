@@ -11,6 +11,7 @@ namespace UserRegistration
     {
         public void ValidationOfData()
         {
+            //first name validation
             Console.Write("Please Enter First Name:");
             var fname = Console.ReadLine();
             string firstname = "^[A-Z]{1}[a-z]{2,}$";
@@ -25,7 +26,7 @@ namespace UserRegistration
             {
                 Console.WriteLine("Entered name is not valid!!");
             }
-
+            //last name validation
             Console.Write("Please Enter Last Name:");
             var lname = Console.ReadLine();
             string lastname = "^[A-Z]{1}[a-z]{2,}$";
@@ -40,7 +41,7 @@ namespace UserRegistration
             {
                 Console.WriteLine("Entered last name is not valid!!");
             }
-
+            //email validation
             Console.Write("Please Enter a Valid Email Id: ");
             var email = Console.ReadLine();
             string mailid = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
@@ -56,6 +57,19 @@ namespace UserRegistration
             else
             {
                 Console.WriteLine("Entered Email Id is not valid!!");
+            }
+            //Mobile number validation
+            Console.Write("Enter Mobile number with country code: ");
+            var phonenum = Console.ReadLine();
+            string phonenumber = "^[91]{2}[\\s][0-9]{10}$";
+            Regex regex4 = new Regex(phonenumber);
+            if (regex4.IsMatch(phonenum))
+            {
+                Console.WriteLine("Mobile number is valid");
+            }
+            else
+            {
+                Console.WriteLine("Mobile number is Invalid!!");
             }
         }
     }
