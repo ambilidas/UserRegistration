@@ -75,7 +75,7 @@ namespace UserRegistration
             //Password validation
             Console.Write("Set your password: ");
             var password = Console.ReadLine();
-            string password_reg = "(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,})$";
+            string password_reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^\\da-zA-Z]).{8,}$";
             Regex regex5 = new Regex(password_reg);
             if (regex5.IsMatch(password))
             {
