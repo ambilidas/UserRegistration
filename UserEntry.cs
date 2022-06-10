@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace UserRegistration
 {
-    internal class UserEntry
+    public class UserEntry
     {
         public void ValidationOfData()
         {
